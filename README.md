@@ -11,7 +11,7 @@
 
 ---
 
-I work across the whole stack — React / Next.js front ends, Node and Rust back ends, and native desktop apps with Tauri — and I design and produce the visuals too, from UI and branding to 3D and video. Most recently building across transport, recruitment, and everyday-utility products.
+I work across the whole stack — React / Next.js front ends, Node and Rust back ends, and native desktop apps with Tauri — and I design and produce the visuals too, from UI and branding to 3D and video. Most recently building across org oriented transport, recruitment, and everyday-utility products.
 
 ## 🧰 Tech stack
 
