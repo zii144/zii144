@@ -3,7 +3,6 @@
 <a href="#noop"><img src="https://capsule-render.vercel.app/api?type=waving&color=0:0B3D91,100:E4002B&height=200&section=header&text=Hi%2C%20I%27m%20Zii%20%F0%9F%91%8B&fontSize=44&fontColor=ffffff&fontAlignY=38&desc=Full-stack%20engineer%20%C2%B7%20Taiwan%20%F0%9F%87%B9%F0%9F%87%BC%20%C2%B7%20web%20and%20desktop%20apps&descSize=16&descAlignY=58&animation=fadeIn" width="100%" /></a>
 
 <a href="#noop"><img src="https://img.shields.io/badge/Based%20in-Taiwan%20%F0%9F%87%B9%F0%9F%87%BC-E4002B?style=for-the-badge&labelColor=0B3D91" /></a>
-<a href="#noop"><img src="https://img.shields.io/badge/Open%20to-Opportunities-0B3D91?style=for-the-badge&labelColor=E4002B" /></a>
 <a href="#noop"><img src="https://komarev.com/ghpvc/?username=zii144&style=for-the-badge&color=0B3D91&label=Profile+views" /></a>
 <a href="https://www.linkedin.com/in/zii-wong-b40913283/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 
