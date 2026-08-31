@@ -36,9 +36,13 @@ jobs:
         with:
           node-version: 22
 
+      # The default GITHUB_TOKEN is scoped to this repository alone, so it
+      # reports zero private repos. Add a personal access token with read access
+      # to your repositories as the secret STATS_TOKEN and the card shows the
+      # real public/private split; without it, it falls back to public-only.
       - name: Generate stats card
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.STATS_TOKEN || secrets.GITHUB_TOKEN }}
           STATS_LOGIN: ${{ github.repository_owner }}
         run: node scripts/generate-stats.mjs
 

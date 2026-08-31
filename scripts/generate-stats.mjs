@@ -46,6 +46,8 @@ const QUERY = `
 query($login:String!, $cursor:String) {
   user(login:$login) {
     followers { totalCount }
+    pubRepos:  repositories(ownerAffiliations:OWNER, isFork:false, privacy:PUBLIC)  { totalCount }
+    privRepos: repositories(ownerAffiliations:OWNER, isFork:false, privacy:PRIVATE) { totalCount }
     contributionsCollection {
       contributionCalendar {
         totalContributions
@@ -137,7 +139,12 @@ function render({ stats, weeks, langs, generated }) {
     { n: stats.contributions.toLocaleString("en-US"), l: "Contributions", s: "past year", c: C.blue },
     { n: String(stats.current), l: "Day streak", s: "current", c: C.accent },
     { n: String(stats.active), l: "Repos shipped", s: "last 90 days", c: C.blue },
-    { n: String(stats.repos), l: "Public repos", s: "sources, no forks", c: C.blue },
+    // A token that cannot see private repos reports zero of them. Rather than
+    // print "0 private" as if it were the truth, fall back to the public-only
+    // wording — see the STATS_TOKEN note in .github/workflows/profile-assets.yml.
+    stats.private > 0
+      ? { n: String(stats.reposAll), l: "Repositories", s: `${stats.repos} public · ${stats.private} private`, c: C.blue }
+      : { n: String(stats.repos), l: "Public repos", s: "sources, no forks", c: C.blue },
   ];
   const colW = (W - PAD * 2) / cells.length;
   const statsSvg = cells
@@ -256,7 +263,9 @@ const stats = {
   current,
   longest,
   active: repos.filter((r) => new Date(r.pushedAt).getTime() >= cutoff).length,
-  repos: user.repositories.totalCount,
+  repos: user.pubRepos.totalCount,
+  private: user.privRepos.totalCount,
+  reposAll: user.pubRepos.totalCount + user.privRepos.totalCount,
   stars: repos.reduce((a, r) => a + r.stargazerCount, 0),
 };
 
@@ -269,6 +278,7 @@ writeFileSync(`${OUT_DIR}/github-stats.svg`, svg);
 console.log(
   `wrote ${OUT_DIR}/github-stats.svg  ${svg.length}B\n` +
     `  contributions=${stats.contributions} current=${current} longest=${longest} ` +
-    `active90d=${stats.active} repos=${stats.repos} stars=${stats.stars}\n` +
+    `active90d=${stats.active} public=${stats.repos} private=${stats.private} ` +
+    `${stats.private ? "" : "(token cannot see private repos) "}stars=${stats.stars}\n` +
     `  languages=${top.map((l) => `${l.name} ${l.pct.toFixed(1)}%`).join(", ")}`
 );
