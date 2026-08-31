@@ -26,6 +26,11 @@ jobs:
             dist/github-contribution-grid-snake.svg?color_snake=#0b3d91&color_dots=#ebedf0,#fecaca,#f87171,#ef4444,#b91c1c
             dist/github-contribution-grid-snake-dark.svg?color_snake=#3b82f6&color_dots=#161b22,#fecaca,#f87171,#ef4444,#b91c1c
 
+      # Platane/snk is a Docker action and runs as root, so the dist/ it
+      # creates is root-owned and the next step cannot write into it.
+      - name: Take ownership of the build directory
+        run: sudo chown -R "$(id -u):$(id -g)" dist
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
