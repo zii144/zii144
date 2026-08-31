@@ -1,6 +1,17 @@
 #!/usr/bin/env node
 // Renders the "GitHub at a glance" card from live GitHub data.
 //
+// Run locally — not in CI:
+//
+//   node scripts/generate-stats.mjs
+//
+// Counting private repositories needs a token that can see them, and the
+// GITHUB_TOKEN available to Actions is scoped to this repository alone, so in
+// CI the private figure comes back as zero. Running here reuses the gh CLI
+// login, which already has that access, and the SVG is committed under assets/.
+// The trade is that the card refreshes when you run it rather than every 12h;
+// the "updated" date in its top-right corner always says how fresh it is.
+//
 // The card is deliberately theme-neutral: transparent background, accent-
 // coloured numerals and hairline rules that stay legible on both the light
 // and the dark GitHub themes. README <picture> + prefers-color-scheme is not
@@ -9,15 +20,25 @@
 // gets served the light asset on a dark page.
 
 import { writeFileSync, mkdirSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 
 const LOGIN = process.env.STATS_LOGIN || "zii144";
-const TOKEN = process.env.GITHUB_TOKEN;
-const OUT_DIR = process.env.STATS_OUT || "dist";
+const OUT_DIR = process.env.STATS_OUT || "assets";
 
-if (!TOKEN) {
-  console.error("GITHUB_TOKEN is required");
-  process.exit(1);
+// Prefer an explicit token, otherwise borrow the gh CLI's login so the script
+// runs with no setup. Never print the token.
+function resolveToken() {
+  if (process.env.GITHUB_TOKEN) return process.env.GITHUB_TOKEN.trim();
+  try {
+    return execFileSync("gh", ["auth", "token"], { encoding: "utf8" }).trim();
+  } catch {
+    console.error(
+      "No token. Either set GITHUB_TOKEN, or sign in once with: gh auth login"
+    );
+    process.exit(1);
+  }
 }
+const TOKEN = resolveToken();
 
 const C = {
   accent: "#E4002B", // brand red — legible on white and on #0d1117

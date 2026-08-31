@@ -1,0 +1,9 @@
+{
+  "name": "zii144-profile",
+  "private": true,
+  "description": "Generators for the profile README cards",
+  "scripts": {
+    "cards": "node scripts/generate-stats.mjs && node scripts/generate-ai-usage.mjs"
+  },
+  "engines": { "node": ">=22" }
+}

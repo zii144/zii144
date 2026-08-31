@@ -43,7 +43,9 @@ I work across the whole stack — React / Next.js front ends, Node and Rust back
 
 <div align="center">
 
-<a href="#noop"><img width="100%" alt="GitHub at a glance — contributions, current streak, repos shipped in the last 90 days, and top languages by code" src="https://raw.githubusercontent.com/zii144/zii144/output/github-stats.svg" /></a>
+<a href="#noop"><img width="100%" alt="GitHub at a glance — contributions, current streak, repos shipped in the last 90 days, repository split and top languages by code" src="https://raw.githubusercontent.com/zii144/zii144/main/assets/github-stats.svg" /></a>
+
+<sub>Generated from the GitHub API. Refresh with <code>npm run cards</code>.</sub>
 
 </div>
 
@@ -53,7 +55,7 @@ I work across the whole stack — React / Next.js front ends, Node and Rust back
 
 <a href="#noop"><img width="100%" alt="Daily message volume across Claude Code, Cursor and Codex, plotted as three contribution tracks on one shared timeline" src="https://raw.githubusercontent.com/zii144/zii144/main/assets/ai-usage.svg" /></a>
 
-<sub>Read from the transcript files on my own machine, not from GitHub — three tools on one shared timeline.<br/>Each track is shaded against its own busiest days. Refresh with <code>node scripts/generate-ai-usage.mjs</code>.</sub>
+<sub>Read from the transcript files on my own machine, not from GitHub — three tools on one shared timeline.<br/>Each track is shaded against its own busiest days. Refresh with <code>npm run cards</code>.</sub>
 
 </div>
 
