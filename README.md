@@ -43,28 +43,7 @@ I work across the whole stack — React / Next.js front ends, Node and Rust back
 
 <div align="center">
 
-<a href="#noop"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=zii144&theme=github_dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=zii144&theme=github" />
-  <img width="84%" alt="GitHub profile summary" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=zii144&theme=github" />
-</picture></a>
-
-<a href="#noop"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=zii144&theme=github_dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=zii144&theme=github" />
-  <img width="41%" alt="Top languages by repo" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=zii144&theme=github" />
-</picture></a>
-<a href="#noop"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=zii144&theme=github_dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=zii144&theme=github" />
-  <img width="41%" alt="Top languages by commit" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=zii144&theme=github" />
-</picture></a>
-
-<a href="#noop"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=zii144&hide_border=true&ring=E4002B&fire=E4002B&theme=dark&background=0D111700&currStreakLabel=58A6FF" />
-  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=zii144&hide_border=true&ring=E4002B&fire=E4002B&background=FFFFFF00&currStreakLabel=0B3D91" />
-  <img width="58%" alt="GitHub contribution streak" src="https://streak-stats.demolab.com/?user=zii144&hide_border=true&ring=E4002B&fire=E4002B&background=FFFFFF00&currStreakLabel=0B3D91" />
-</picture></a>
+<a href="#noop"><img width="100%" alt="GitHub at a glance — contributions, current streak, repos shipped in the last 90 days, and top languages by code" src="https://raw.githubusercontent.com/zii144/zii144/output/github-stats.svg" /></a>
 
 </div>
 

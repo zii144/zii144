@@ -1,4 +1,4 @@
-name: Generate Snake
+name: Profile assets
 
 on:
   schedule:
@@ -14,6 +14,9 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
       - name: Generate snake
         uses: Platane/snk@v3
         id: snake-gif
@@ -22,6 +25,17 @@ jobs:
           outputs: |
             dist/github-contribution-grid-snake.svg?color_snake=#0b3d91&color_dots=#ebedf0,#fecaca,#f87171,#ef4444,#b91c1c
             dist/github-contribution-grid-snake-dark.svg?color_snake=#3b82f6&color_dots=#161b22,#fecaca,#f87171,#ef4444,#b91c1c
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Generate stats card
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          STATS_LOGIN: ${{ github.repository_owner }}
+        run: node scripts/generate-stats.mjs
 
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
