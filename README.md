@@ -10,7 +10,7 @@
 
 ---
 
-I work across the whole stack — React / Next.js front ends, Node and Rust back ends, and native desktop apps with Tauri — and I design and produce the visuals too, from UI and branding to 3D and video. My latest is **[ZIMD](https://github.com/zii144/ZIMD)**, a luxury desktop Markdown reader. Most recently building across transport, recruitment, and everyday-utility products.
+I work across the whole stack — React / Next.js front ends, Node and Rust back ends, and native desktop apps with Tauri — and I design and produce the visuals too, from UI and branding to 3D and video. Right now I'm building **[Zii Swiss Army Knife](https://github.com/zii144/zii-swiss-army-knife)**, a privacy-first offline utility suite, alongside **[ZIMD](https://github.com/zii144/ZIMD)**, a luxury desktop Markdown reader. Most recently shipping across transport, recruitment, and everyday-utility products.
 
 ## 🧰 Tech stack
 
@@ -19,10 +19,10 @@ I work across the whole stack — React / Next.js front ends, Node and Rust back
 <table>
 <tr><td align="right"><strong>Languages</strong></td><td><a href="https://www.typescriptlang.org"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" /></a> <a href="https://developer.mozilla.org/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" /></a> <a href="https://www.python.org"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" /></a> <a href="https://learn.microsoft.com/dotnet/csharp/"><img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=csharp&logoColor=white" /></a> <a href="https://www.swift.org"><img src="https://img.shields.io/badge/Swift-F05138?style=for-the-badge&logo=swift&logoColor=white" /></a> <a href="https://www.rust-lang.org"><img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white" /></a></td></tr>
 <tr><td align="right"><strong>Frontend</strong></td><td><a href="https://react.dev"><img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /></a> <a href="https://nextjs.org"><img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" /></a> <a href="https://svelte.dev"><img src="https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white" /></a> <a href="https://tailwindcss.com"><img src="https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" /></a> <a href="https://threejs.org"><img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white" /></a> <a href="https://vite.dev"><img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" /></a> <a href="https://developer.mozilla.org/docs/Web/HTML"><img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" /></a> <a href="https://developer.mozilla.org/docs/Web/CSS"><img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" /></a></td></tr>
-<tr><td align="right"><strong>Backend &amp; Data</strong></td><td><a href="https://nodejs.org"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" /></a> <a href="https://expressjs.com"><img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" /></a> <a href="https://www.mysql.com"><img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" /></a> <a href="https://firebase.google.com"><img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" /></a></td></tr>
-<tr><td align="right"><strong>Desktop, Game &amp; 3D</strong></td><td><a href="https://tauri.app"><img src="https://img.shields.io/badge/Tauri-24C8B8?style=for-the-badge&logo=tauri&logoColor=white" /></a> <a href="https://unity.com"><img src="https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white" /></a> <a href="https://www.blender.org"><img src="https://img.shields.io/badge/Blender-E87D0D?style=for-the-badge&logo=blender&logoColor=white" /></a></td></tr>
+<tr><td align="right"><strong>Backend &amp; Data</strong></td><td><a href="https://nodejs.org"><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" /></a> <a href="https://expressjs.com"><img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" /></a> <a href="https://fastapi.tiangolo.com"><img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" /></a> <a href="https://www.mysql.com"><img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" /></a> <a href="https://firebase.google.com"><img src="https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black" /></a></td></tr>
+<tr><td align="right"><strong>Desktop, Mobile &amp; 3D</strong></td><td><a href="https://tauri.app"><img src="https://img.shields.io/badge/Tauri-24C8B8?style=for-the-badge&logo=tauri&logoColor=white" /></a> <a href="https://expo.dev"><img src="https://img.shields.io/badge/Expo-000020?style=for-the-badge&logo=expo&logoColor=white" /></a> <a href="https://unity.com"><img src="https://img.shields.io/badge/Unity-000000?style=for-the-badge&logo=unity&logoColor=white" /></a> <a href="https://www.blender.org"><img src="https://img.shields.io/badge/Blender-E87D0D?style=for-the-badge&logo=blender&logoColor=white" /></a></td></tr>
 <tr><td align="right"><strong>Design &amp; Creative</strong></td><td><a href="https://www.figma.com"><img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" /></a> <a href="https://www.adobe.com/products/photoshop.html"><img src="https://img.shields.io/badge/Photoshop-001E36?style=for-the-badge&logo=adobephotoshop&logoColor=31A8FF" /></a> <a href="https://www.adobe.com/products/illustrator.html"><img src="https://img.shields.io/badge/Illustrator-330000?style=for-the-badge&logo=adobeillustrator&logoColor=FF9A00" /></a> <a href="https://www.adobe.com/products/premiere.html"><img src="https://img.shields.io/badge/Premiere_Pro-2D0040?style=for-the-badge&logo=adobepremierepro&logoColor=EA77FF" /></a> <a href="https://www.capcut.com"><img src="https://img.shields.io/badge/CapCut-000000?style=for-the-badge&logo=capcut&logoColor=white" /></a></td></tr>
-<tr><td align="right"><strong>DevOps &amp; Tools</strong></td><td><a href="https://www.docker.com"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" /></a> <a href="https://git-scm.com"><img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" /></a> <a href="https://github.com/features/actions"><img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" /></a> <a href="https://mermaid.js.org"><img src="https://img.shields.io/badge/Mermaid-FF3670?style=for-the-badge&logo=mermaid&logoColor=white" /></a></td></tr>
+<tr><td align="right"><strong>DevOps &amp; Tools</strong></td><td><a href="https://www.docker.com"><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" /></a> <a href="https://git-scm.com"><img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" /></a> <a href="https://github.com/features/actions"><img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" /></a> <a href="https://turborepo.com"><img src="https://img.shields.io/badge/Turborepo-EF4444?style=for-the-badge&logo=turborepo&logoColor=white" /></a> <a href="https://mermaid.js.org"><img src="https://img.shields.io/badge/Mermaid-FF3670?style=for-the-badge&logo=mermaid&logoColor=white" /></a></td></tr>
 </table>
 
 </div>
@@ -37,9 +37,34 @@ I work across the whole stack — React / Next.js front ends, Node and Rust back
   <img alt="Contribution snake animation" src="https://raw.githubusercontent.com/zii144/zii144/output/github-contribution-grid-snake.svg" width="100%" />
 </picture></a>
 
-<br/>
+</div>
 
-<a href="#noop"><img width="95%" alt="Contribution activity graph" src="https://github-readme-activity-graph.vercel.app/graph?username=zii144&bg_color=FFFFFF&color=0B3D91&line=E4002B&point=E4002B&area=true&hide_border=true&radius=16" /></a>
+## 📊 GitHub at a glance
+
+<div align="center">
+
+<a href="#noop"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=zii144&theme=github_dark" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=zii144&theme=github" />
+  <img width="84%" alt="GitHub profile summary" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=zii144&theme=github" />
+</picture></a>
+
+<a href="#noop"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=zii144&theme=github_dark" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=zii144&theme=github" />
+  <img width="41%" alt="Top languages by repo" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=zii144&theme=github" />
+</picture></a>
+<a href="#noop"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=zii144&theme=github_dark" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=zii144&theme=github" />
+  <img width="41%" alt="Top languages by commit" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=zii144&theme=github" />
+</picture></a>
+
+<a href="#noop"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://streak-stats.demolab.com/?user=zii144&hide_border=true&ring=E4002B&fire=E4002B&theme=dark&background=0D111700&currStreakLabel=58A6FF" />
+  <source media="(prefers-color-scheme: light)" srcset="https://streak-stats.demolab.com/?user=zii144&hide_border=true&ring=E4002B&fire=E4002B&background=FFFFFF00&currStreakLabel=0B3D91" />
+  <img width="58%" alt="GitHub contribution streak" src="https://streak-stats.demolab.com/?user=zii144&hide_border=true&ring=E4002B&fire=E4002B&background=FFFFFF00&currStreakLabel=0B3D91" />
+</picture></a>
 
 </div>
 
@@ -48,10 +73,59 @@ I work across the whole stack — React / Next.js front ends, Node and Rust back
 <div align="center">
 
 <table>
-<tr><td width="50%"><a href="https://github.com/zii144/ZIMD"><img width="100%" src="https://socialify.git.ci/zii144/ZIMD/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="ZIMD" /></a></td><td width="50%"><a href="https://github.com/zii144/zii-swiss-army-knife"><img width="100%" src="https://socialify.git.ci/zii144/zii-swiss-army-knife/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="zii-swiss-army-knife" /></a></td></tr>
-<tr><td width="50%"><a href="https://github.com/zii144/ZIIP"><img width="100%" src="https://socialify.git.ci/zii144/ZIIP/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="ZIIP" /></a></td><td width="50%"><a href="https://github.com/zii144/carbon-quotation-system"><img width="100%" src="https://socialify.git.ci/zii144/carbon-quotation-system/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="carbon-quotation-system" /></a></td></tr>
-<tr><td width="50%"><a href="https://github.com/zii144/it-smart-hiring-tech"><img width="100%" src="https://socialify.git.ci/zii144/it-smart-hiring-tech/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="it-smart-hiring-tech" /></a></td><td width="50%"><a href="https://github.com/zii144/fleet-trace"><img width="100%" src="https://socialify.git.ci/zii144/fleet-trace/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="fleet-trace" /></a></td></tr>
+<tr>
+<td width="50%">
+<a href="https://github.com/zii144/zii-swiss-army-knife"><img width="100%" src="https://socialify.git.ci/zii144/zii-swiss-army-knife/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="zii-swiss-army-knife" /></a>
+<p align="center"><img src="https://img.shields.io/badge/TypeScript%20%C2%B7%20Turborepo%20%C2%B7%20PWA-0B3D91?style=flat-square" /></p>
+</td>
+<td width="50%">
+<a href="https://github.com/zii144/ZIMD"><img width="100%" src="https://socialify.git.ci/zii144/ZIMD/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="ZIMD" /></a>
+<p align="center"><img src="https://img.shields.io/badge/Tauri%202%20%C2%B7%20Rust%20%C2%B7%20Svelte%205-0B3D91?style=flat-square" /></p>
+</td>
+</tr>
+<tr>
+<td width="50%">
+<a href="https://github.com/zii144/ZIIP"><img width="100%" src="https://socialify.git.ci/zii144/ZIIP/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="ZIIP" /></a>
+<p align="center"><img src="https://img.shields.io/badge/Tauri%202%20%C2%B7%20React%2019%20%C2%B7%20Rust-0B3D91?style=flat-square" /></p>
+</td>
+<td width="50%">
+<a href="https://github.com/zii144/it-smart-bloom"><img width="100%" src="https://socialify.git.ci/zii144/it-smart-bloom/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="it-smart-bloom" /></a>
+<p align="center"><a href="https://it-smart-bloom.vercel.app"><img src="https://img.shields.io/badge/Live%20demo-E4002B?style=flat-square&logo=vercel&logoColor=white" /></a> <img src="https://img.shields.io/badge/Next.js%20%C2%B7%20OpenAI%20Images-0B3D91?style=flat-square" /></p>
+</td>
+</tr>
+<tr>
+<td width="50%">
+<a href="https://github.com/zii144/open-line-rich-menu-manager"><img width="100%" src="https://socialify.git.ci/zii144/open-line-rich-menu-manager/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="open-line-rich-menu-manager" /></a>
+<p align="center"><img src="https://img.shields.io/badge/Next.js%2015%20%C2%B7%20React%2019%20%C2%B7%20LINE%20API-0B3D91?style=flat-square" /></p>
+</td>
+<td width="50%">
+<a href="https://github.com/zii144/road-teacher-self-learning"><img width="100%" src="https://socialify.git.ci/zii144/road-teacher-self-learning/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="road-teacher-self-learning" /></a>
+<p align="center"><a href="https://zii144.github.io/road-teacher-self-learning/"><img src="https://img.shields.io/badge/Live%20demo-E4002B?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Vanilla%20JS%20%C2%B7%20Playwright-0B3D91?style=flat-square" /></p>
+</td>
+</tr>
 </table>
+
+</div>
+
+<details>
+<summary><b>📦 More public work</b></summary>
+
+<br/>
+
+| Project | What it is | Stack | Live |
+| --- | --- | --- | --- |
+| **[fleet-trace](https://github.com/zii144/fleet-trace)** | Fleet-tracking & service-quality survey platform for transport operators | Next.js · Firebase / Firestore | [↗](https://fleet-trace.vercel.app) |
+| **[it-smart-hiring-tech](https://github.com/zii144/it-smart-hiring-tech)** | Immersive recruitment site with 3D shader backgrounds and motion-driven UX | Next.js 16 · React 19 · Three.js | [↗](https://it-smart-hiring-tech.vercel.app) |
+| **[carbon-quotation-system](https://github.com/zii144/carbon-quotation-system)** | Full-stack quotation & cost-management platform for manufacturing | React · Node/Express · MySQL · Docker | — |
+| **[it-smart-parking-recheck](https://github.com/zii144/it-smart-parking-recheck)** | 停車單稽查系統 — field recheck of paper parking tickets, with admin review console | FastAPI · SQLite | — |
+| **[traffic-impact-assessment](https://github.com/zii144/traffic-impact-assessment)** | 交通衝擊評估 — traffic impact assessment workflow system | Vite · React · TypeScript | — |
+| **[flash-accounting-landing-page](https://github.com/zii144/flash-accounting-landing-page)** | Landing page for 黑白記帳, a frictionless expense tracker | Next.js · TypeScript | [↗](https://flash-accounting-landing-page.vercel.app) |
+| **[zii-website](https://github.com/zii144/zii-website)** | Personal portfolio site | React | [↗](https://zii-website.vercel.app) |
+| **[Zii-Dev-Kit](https://github.com/zii144/Zii-Dev-Kit)** | Personal dev kit of tricky Unity implementations | Unity · C# | — |
+
+</details>
+
+<div align="center">
 
 <br/>
 
