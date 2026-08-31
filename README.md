@@ -66,31 +66,31 @@ I work across the whole stack — React / Next.js front ends, Node and Rust back
 <table>
 <tr>
 <td width="50%">
-<a href="https://github.com/zii144/zii-swiss-army-knife"><img width="100%" src="https://socialify.git.ci/zii144/zii-swiss-army-knife/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="zii-swiss-army-knife" /></a>
+<a href="https://github.com/zii144/zii-swiss-army-knife"><img width="100%" src="assets/repo-covers/zii-swiss-army-knife.png" alt="Abstract utility network cover for zii-swiss-army-knife" /></a>
 <p align="center"><img src="https://img.shields.io/badge/TypeScript%20%C2%B7%20Turborepo%20%C2%B7%20PWA-0B3D91?style=flat-square" /></p>
 </td>
 <td width="50%">
-<a href="https://github.com/zii144/ZIMD"><img width="100%" src="https://socialify.git.ci/zii144/ZIMD/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="ZIMD" /></a>
+<a href="https://github.com/zii144/ZIMD"><img width="100%" src="assets/repo-covers/zimd.png" alt="Abstract reading and diagrams cover for ZIMD" /></a>
 <p align="center"><img src="https://img.shields.io/badge/Tauri%202%20%C2%B7%20Rust%20%C2%B7%20Svelte%205-0B3D91?style=flat-square" /></p>
 </td>
 </tr>
 <tr>
 <td width="50%">
-<a href="https://github.com/zii144/ZIIP"><img width="100%" src="https://socialify.git.ci/zii144/ZIIP/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="ZIIP" /></a>
+<a href="https://github.com/zii144/ZIIP"><img width="100%" src="assets/repo-covers/ziip.png" alt="Abstract API orchestration cover for ZIIP" /></a>
 <p align="center"><img src="https://img.shields.io/badge/Tauri%202%20%C2%B7%20React%2019%20%C2%B7%20Rust-0B3D91?style=flat-square" /></p>
 </td>
 <td width="50%">
-<a href="https://github.com/zii144/it-smart-bloom"><img width="100%" src="https://socialify.git.ci/zii144/it-smart-bloom/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="it-smart-bloom" /></a>
+<a href="https://github.com/zii144/it-smart-bloom"><img width="100%" src="assets/repo-covers/it-smart-bloom.png" alt="Abstract camera-to-portrait transformation cover for it-smart-bloom" /></a>
 <p align="center"><a href="https://it-smart-bloom.vercel.app"><img src="https://img.shields.io/badge/Live%20demo-E4002B?style=flat-square&logo=vercel&logoColor=white" /></a> <img src="https://img.shields.io/badge/Next.js%20%C2%B7%20OpenAI%20Images-0B3D91?style=flat-square" /></p>
 </td>
 </tr>
 <tr>
 <td width="50%">
-<a href="https://github.com/zii144/open-line-rich-menu-manager"><img width="100%" src="https://socialify.git.ci/zii144/open-line-rich-menu-manager/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="open-line-rich-menu-manager" /></a>
+<a href="https://github.com/zii144/open-line-rich-menu-manager"><img width="100%" src="assets/repo-covers/open-line-rich-menu-manager.png" alt="Abstract modular rich-menu editor cover" /></a>
 <p align="center"><img src="https://img.shields.io/badge/Next.js%2015%20%C2%B7%20React%2019%20%C2%B7%20LINE%20API-0B3D91?style=flat-square" /></p>
 </td>
 <td width="50%">
-<a href="https://github.com/zii144/road-teacher-self-learning"><img width="100%" src="https://socialify.git.ci/zii144/road-teacher-self-learning/image?description=1&font=Inter&language=1&name=1&owner=1&pattern=Circuit+Board&theme=Dark" alt="road-teacher-self-learning" /></a>
+<a href="https://github.com/zii144/road-teacher-self-learning"><img width="100%" src="assets/repo-covers/road-teacher-self-learning.png" alt="Abstract interactive road-instruction cover" /></a>
 <p align="center"><a href="https://zii144.github.io/road-teacher-self-learning/"><img src="https://img.shields.io/badge/Live%20demo-E4002B?style=flat-square&logo=github&logoColor=white" /></a> <img src="https://img.shields.io/badge/Vanilla%20JS%20%C2%B7%20Playwright-0B3D91?style=flat-square" /></p>
 </td>
 </tr>
