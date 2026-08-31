@@ -47,6 +47,16 @@ I work across the whole stack — React / Next.js front ends, Node and Rust back
 
 </div>
 
+## 🤖 AI coding tools
+
+<div align="center">
+
+<a href="#noop"><img width="100%" alt="Daily message volume across Claude Code, Cursor and Codex, plotted as three contribution tracks on one shared timeline" src="https://raw.githubusercontent.com/zii144/zii144/main/assets/ai-usage.svg" /></a>
+
+<sub>Read from the transcript files on my own machine, not from GitHub — three tools on one shared timeline.<br/>Each track is shaded against its own busiest days. Refresh with <code>node scripts/generate-ai-usage.mjs</code>.</sub>
+
+</div>
+
 ## 📂 Public GitHub Repos
 
 <div align="center">
