@@ -9,6 +9,10 @@
 //
 //   node scripts/generate-ai-usage.mjs
 //
+// AI_USAGE_JSON=<path> additionally writes the same extraction as JSON, in the
+// shape the "AI Usage Tracks" artifact page embeds. Both outputs come from this
+// one pass so the card and the artifact can never disagree.
+//
 // Like the stats card, the artwork is theme-neutral. Cells are drawn as one
 // hue at varying opacity over a transparent ground, so each level composites
 // correctly whether the reader's GitHub is light or dark — no <picture>, whose
@@ -53,6 +57,7 @@ const bump = (m, day) => m.set(day, (m.get(day) || 0) + 1);
 // ------------------------------------------------------------- Claude Code
 async function claudeCode() {
   const counts = new Map(), sessions = new Set(), seen = new Set();
+  let out = 0;
   for (const f of await walk(join(HOME, ".claude", "projects"))) {
     await eachLine(f, (d) => {
       if (d.type !== "user" && d.type !== "assistant") return;
@@ -63,38 +68,48 @@ async function claudeCode() {
       if (!d.timestamp) return;
       bump(counts, localDay(new Date(d.timestamp)));
       if (d.sessionId) sessions.add(d.sessionId);
+      // output_tokens only: input and cache reads repeat the same context every
+      // turn, so summing them measures cache traffic rather than work done.
+      out += d.message?.usage?.output_tokens || 0;
     });
   }
-  return { counts, sessions: sessions.size };
+  return { counts, sessions: sessions.size, out };
 }
 
 // ------------------------------------------------------------------- Codex
 async function codex() {
   const counts = new Map(), sessions = new Set();
+  let out = 0;
   const files = [
     ...(await walk(join(HOME, ".codex", "sessions"))),
     ...(await walk(join(HOME, ".codex", "archived_sessions"))),
   ];
   for (const f of files) {
-    let used = false;
+    let used = false, peak = 0;
     await eachLine(f, (d) => {
       const p = d.payload;
       if (!p || typeof p !== "object") return;
+      if (p.type === "token_count") {
+        // cumulative per session, so keep the high-water mark
+        peak = Math.max(peak, p.info?.total_token_usage?.output_tokens || 0);
+        return;
+      }
       if (p.type !== "user_message" && p.type !== "agent_message") return;
       if (!d.timestamp) return;
       bump(counts, localDay(new Date(d.timestamp)));
       used = true;
     });
     if (used) sessions.add(f);
+    out += peak;
   }
-  return { counts, sessions: sessions.size };
+  return { counts, sessions: sessions.size, out };
 }
 
 // ------------------------------------------------------------------ Cursor
 function cursor() {
   const counts = new Map();
   const db = join(HOME, "Library/Application Support/Cursor/User/globalStorage/state.vscdb");
-  if (!existsSync(db)) return { counts, sessions: 0 };
+  if (!existsSync(db)) return { counts, sessions: 0, out: 0 };
   const con = new DatabaseSync(db, { readOnly: true });
   const rows = con
     .prepare("select value from cursorDiskKV where key like 'composerData:%'")
@@ -114,7 +129,7 @@ function cursor() {
     sessions++;
   }
   con.close();
-  return { counts, sessions };
+  return { counts, sessions, out: 0 };   // Cursor stores no token counts
 }
 
 // ----------------------------------------------------------------- render
@@ -227,6 +242,68 @@ const tools = [
   { name: "Cursor",      color: "#2F81F7", ...cu },
   { name: "Codex",       color: "#3FB950", ...cx },
 ];
+
+// ------------------------------------------------------- optional JSON emit
+if (process.env.AI_USAGE_JSON) {
+  const active = tools.filter((t) => t.counts.size);
+  const all = active.flatMap((t) => [...t.counts.keys()]).sort();
+  const first = new Date(all[0] + "T12:00:00");
+  const last = new Date(all[all.length - 1] + "T12:00:00");
+  first.setDate(first.getDate() - first.getDay());
+  last.setDate(last.getDate() + (6 - last.getDay()));
+  const days = [];
+  for (let d = new Date(first); d <= last; d.setDate(d.getDate() + 1))
+    days.push(localDay(d));
+
+  const META = {
+    "Claude Code": { hue: "clay", note: "Anthropic" },
+    Codex: { hue: "green", note: "OpenAI" },
+    Cursor: { hue: "indigo", note: "Anysphere" },
+  };
+  const currentStreak = (keys) => {
+    // longest run is what the card shows; the artifact shows the same figure
+    return longestStreak(keys);
+  };
+  const combined = new Map();
+  for (const t of active) {
+    t.first = [...t.counts.keys()].sort()[0];
+    for (const [d, n] of t.counts) combined.set(d, (combined.get(d) || 0) + n);
+  }
+  // debut order, so the tracks read as the handoff from one tool to the next
+  const ordered = [...active].sort((a, b) => (a.first < b.first ? -1 : 1));
+
+  const shape = (t) => {
+    const vals = [...t.counts.values()];
+    const total = vals.reduce((a, b) => a + b, 0);
+    const dates = [...t.counts.keys()].sort();
+    let peakDay = dates[0], peakN = 0;
+    for (const [d, n] of t.counts) if (n > peakN) (peakN = n), (peakDay = d);
+    return {
+      name: t.name, ...META[t.name],
+      counts: Object.fromEntries(t.counts),
+      q: quartiles(t.counts.values()),
+      total, activeDays: t.counts.size, sessions: t.sessions, out: t.out || 0,
+      first: dates[0], last: dates[dates.length - 1],
+      streak: currentStreak(t.counts.keys()),
+      peakDay, peakN,
+      median: [...vals].sort((a, b) => a - b)[Math.floor(vals.length / 2)],
+    };
+  };
+  const payload = {
+    days, start: days[0], end: days[days.length - 1],
+    tools: ordered.map(shape),
+    combined: {
+      counts: Object.fromEntries(combined),
+      q: quartiles(combined.values()),
+      total: [...combined.values()].reduce((a, b) => a + b, 0),
+      activeDays: combined.size,
+      streak: longestStreak(combined.keys()),
+    },
+  };
+  writeFileSync(process.env.AI_USAGE_JSON, JSON.stringify(payload));
+  console.log(`wrote ${process.env.AI_USAGE_JSON}  ${
+    (JSON.stringify(payload).length / 1024).toFixed(0)}KB  axis ${payload.start} -> ${payload.end}`);
+}
 
 const svg = render(tools);
 mkdirSync(OUT.split("/").slice(0, -1).join("/") || ".", { recursive: true });
