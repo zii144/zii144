@@ -94,7 +94,12 @@ async function codex() {
         peak = Math.max(peak, p.info?.total_token_usage?.output_tokens || 0);
         return;
       }
-      if (p.type !== "user_message" && p.type !== "agent_message") return;
+      // Codex migrated its rollout schema: the user_message / agent_message
+      // events this used to count no longer exist, and older files were
+      // rewritten too. response_item/message carries a role and is present in
+      // both formats, so count that and ignore the injected developer turns.
+      if (p.type !== "message") return;
+      if (p.role !== "user" && p.role !== "assistant") return;
       if (!d.timestamp) return;
       bump(counts, localDay(new Date(d.timestamp)));
       used = true;
