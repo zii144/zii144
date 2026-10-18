@@ -77,7 +77,34 @@ async function claudeCode() {
 }
 
 // ------------------------------------------------------------------- Codex
-async function codex() {
+// Codex moved its history into thread_history_1.sqlite and now prunes the
+// JSONL rollouts behind it — by Oct 2026 only the last few weeks survived on
+// disk, which made the file-based count collapse. The database keeps the full
+// span, so read that and fall back to the files only if it is missing.
+function codexDb() {
+  const db = join(HOME, ".codex", "thread_history_1.sqlite");
+  if (!existsSync(db)) return null;
+  const counts = new Map();
+  const threads = new Set();
+  const con = new DatabaseSync(db, { readOnly: true });
+  const rows = con
+    .prepare(
+      `select thread_id, created_at_ms from thread_items
+        where item_type in ('userMessage','agentMessage')`
+    )
+    .all();
+  for (const { thread_id, created_at_ms } of rows) {
+    bump(counts, localDay(new Date(Number(created_at_ms))));
+    threads.add(thread_id);
+  }
+  con.close();
+  // The store records no token usage, and the only files that still carry it
+  // cover a fraction of the span — a figure from those would not match the
+  // message count beside it, so report none.
+  return { counts, sessions: threads.size, out: 0 };
+}
+
+async function codexFiles() {
   const counts = new Map(), sessions = new Set();
   let out = 0;
   const files = [
@@ -90,14 +117,9 @@ async function codex() {
       const p = d.payload;
       if (!p || typeof p !== "object") return;
       if (p.type === "token_count") {
-        // cumulative per session, so keep the high-water mark
         peak = Math.max(peak, p.info?.total_token_usage?.output_tokens || 0);
         return;
       }
-      // Codex migrated its rollout schema: the user_message / agent_message
-      // events this used to count no longer exist, and older files were
-      // rewritten too. response_item/message carries a role and is present in
-      // both formats, so count that and ignore the injected developer turns.
       if (p.type !== "message") return;
       if (p.role !== "user" && p.role !== "assistant") return;
       if (!d.timestamp) return;
@@ -108,6 +130,10 @@ async function codex() {
     out += peak;
   }
   return { counts, sessions: sessions.size, out };
+}
+
+async function codex() {
+  return codexDb() ?? (await codexFiles());
 }
 
 // ------------------------------------------------------------------ Cursor
