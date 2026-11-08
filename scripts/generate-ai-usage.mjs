@@ -230,7 +230,7 @@ function render(tools) {
   <text x="${PAD}" y="${y + 28}" ${F} font-size="11.5" font-weight="700" fill="${t.color}">${nf(total)}</text>
   <text x="${PAD + nf(total).length * 7 + 4}" y="${y + 28}" ${F} font-size="10" fill="${MUTE}">messages</text>
   <text x="${PAD}" y="${y + 43}" ${F} font-size="9.5" fill="${MUTE}">${t.counts.size} active days · ${nf(t.sessions)} sessions</text>
-  <text x="${PAD}" y="${y + 56}" ${F} font-size="9.5" fill="${MUTE}" fill-opacity=".8">peak ${nf(peak)} · streak ${streak}d</text>`;
+  <text x="${PAD}" y="${y + 56}" ${F} font-size="9.5" fill="${MUTE}" fill-opacity=".8">peak ${nf(peak)} · longest ${streak}d</text>`;
 
     days.forEach((d, idx) => {
       const n = t.counts.get(d) || 0;
@@ -291,10 +291,6 @@ if (process.env.AI_USAGE_JSON) {
     Codex: { hue: "green", note: "OpenAI" },
     Cursor: { hue: "indigo", note: "Anysphere" },
   };
-  const currentStreak = (keys) => {
-    // longest run is what the card shows; the artifact shows the same figure
-    return longestStreak(keys);
-  };
   const combined = new Map();
   for (const t of active) {
     t.first = [...t.counts.keys()].sort()[0];
@@ -315,7 +311,7 @@ if (process.env.AI_USAGE_JSON) {
       q: quartiles(t.counts.values()),
       total, activeDays: t.counts.size, sessions: t.sessions, out: t.out || 0,
       first: dates[0], last: dates[dates.length - 1],
-      streak: currentStreak(t.counts.keys()),
+      longestRun: longestStreak(t.counts.keys()),
       peakDay, peakN,
       median: [...vals].sort((a, b) => a - b)[Math.floor(vals.length / 2)],
     };
@@ -328,7 +324,7 @@ if (process.env.AI_USAGE_JSON) {
       q: quartiles(combined.values()),
       total: [...combined.values()].reduce((a, b) => a + b, 0),
       activeDays: combined.size,
-      streak: longestStreak(combined.keys()),
+      longestRun: longestStreak(combined.keys()),
     },
   };
   writeFileSync(process.env.AI_USAGE_JSON, JSON.stringify(payload));
